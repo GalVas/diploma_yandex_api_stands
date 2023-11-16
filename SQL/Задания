@@ -11,7 +11,7 @@ ORDER BY cour.login DESC;
 Для Cygwin:
 SELECT cour.login,COUNT(*) AS orders_total_amount FROM "Couriers" AS cour INNER JOIN "Orders" AS ord ON cour.id = ord."courierId" WHERE ord."inDelivery" = true GROUP BY cour.id ORDER BY cour.login DESC;
 
-Результат:
+Результат в файле "/SQL/1 задание - вариант 1"
 
 
 2-ой вариант решения: 
@@ -24,7 +24,7 @@ GROUP BY id, login;
 Для Cygwin:
 SELECT login, COUNT(*) FROM (SELECT "Couriers".id,"Couriers".login,track FROM "Couriers","Orders" WHERE "Couriers".id = "courierId") AS tab GROUP BY id, login;
 
-Результат:
+Результат в файле "/SQL/1 задание - вариант 2"
 
 
 
@@ -40,3 +40,5 @@ FROM "Orders"
 
 Для Cygwin:
 SELECT track,address, CASE WHEN finished = true THEN 2 WHEN cancelled = true THEN -1 WHEN  "inDelivery" = true THEN 1 ELSE 0 END AS status FROM "Orders";
+
+Результат в файле "/SQL/2 задание"
